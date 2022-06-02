@@ -210,15 +210,17 @@ const WorkoutList = ({ items }) => (
   <ul className={styles.workoutList}>
     {items.map(
       ({ title, subheading, stats, image: { height, width } }, idx) => (
-        <li className={styles.item}>
+        <li className={styles.item} key={idx}>
           {/* Title */}
           <h3 className={styles.title}>{title}</h3>
           {/* Subheading */}
           <p className={styles.subheading}>{subheading}</p>
           {/* Stats list */}
           <ul className={styles.stats}>
-            {stats.map((value) => (
-              <li className={styles.stat}>{value}</li>
+            {stats.map((value, i) => (
+              <li className={styles.stat} key={i}>
+                {value}
+              </li>
             ))}
           </ul>
 
