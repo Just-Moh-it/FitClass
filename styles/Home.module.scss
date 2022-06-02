@@ -1,0 +1,66 @@
+// Color Variables
+$primary: #002c6e;
+$secondary: #5271ff;
+$secondary-dark: #3252e5;
+$bg: #ffffff;
+$bg-dark: #ffffffa1;
+
+// Import font from assets folder
+@font-face {
+  font-family: "SF Pro";
+  src: url("/fonts/SF-pro-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrapper {
+  font-family: "SF Pro", sans-serif;
+  color: $primary;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ul,
+  ul > * {
+    list-style-type: none;
+  }
+
+  // Utilities
+
+  .headerLink {
+    display: block;
+    color: $primary;
+
+    &.active {
+      color: $secondary;
+    }
+  }
+
+  .secondaryDark {
+    color: #5271ff;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .underline {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-color: unquote($secondary + "50");
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      background-color: unquote($secondary + "99");
+      bottom: -5px;
+    }
+  }
+}
